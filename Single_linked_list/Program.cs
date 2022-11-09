@@ -41,7 +41,24 @@ namespace single_linked_list
 
             /*Menentukan lokasi node baru didalam list*/
 
-            
+            Node previous, current;
+            previous =START;
+            current = START;
+
+            while((current != null) && (nim >= current.noMhs))
+            {
+                if (nim == current.noMhs)
+                {
+                    Console.WriteLine("\nNomer mahasiswa sama tidak diijinkan\n");
+                    return;
+                }
+                previous = current;
+                current = current.next;
+            }
+            /*Node baru akan ditempatkan diantara previous dan current*/
+
+            nodeBaru.next = current;
+            nodeBaru.next = nodeBaru;
         }
     }
 }
